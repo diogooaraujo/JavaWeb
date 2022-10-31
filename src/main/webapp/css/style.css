@@ -4,28 +4,76 @@
 
 * {
 	text-align: center;
-	margin-top: 20px;
 }
 
 body{
+	width: 600px;
+	height: 600px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
 	font-weight: 400;
 }
 
+.Table{
+	width: 600px;
+	height: 150px;
+}
+
 h1 {
 	color: #66bbff;
+	text-transform: uppercase;
 }
 
 .Botao1{
-	text-decoration: none;
-	background-color: #66bbff;
-	padding: 5px 10px 5px 10px;
-	color: #fff;
-	font-size: 1.2em;
-	font-weight: 700;
+	text-decoration: none; /* Link sem decoração padrão: azul e sublinhado. */
+	background-color: #66bbff; /* Cor interna do conteúdo */
+	padding: 5px 10px 5px 10px; /* Espaçamento interno do conteúdo */ 
+	color: #fff; /* Cor da fonte */
+	font-size: 1.2em; /* Tamanho da fonte */
+	font-weight: 700; /* Peso da fonte */
+	border-radius: 5px; /* Curvatura do botão */ 
+	text-transform: uppercase; /* Transformando as letras em maíusculas */
+	border: 0; /* Removendo a sombra */
+	cursor: pointer; /* Transformando o ponteiro do mouse em clicável */
+}
+
+.Caixa1{
+	width: 320px;
+	height: 20px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #66bbff;
 	border-radius: 5px;
-	text-transform: uppercase;
-	
-	
+}
+
+.Caixa2{
+	height: 20px;
+	padding: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #66bbff;
+	border-radius: 5px;
+}
+
+#tabela{
+	margin-top: 30px;
+	border-collapse: collapse; /* Removendo o espaçamento células da tabela. */
+}
+
+#tabela th{
+	border: 1px solid #ddd;
+	padding: 10px;
+	text-align: center;
+	background: #66bbff;
+	color: #fff;
+}
+
+#tabela td{
+	border: 1px solid #ddd;
+	padding: 10px;
 }
