@@ -7,21 +7,23 @@
 <title>Agenda</title>
 </head>
 <body>
-	<h1>Criar novo contato</h1>
-	<form name="frmContato" action="insert">
-		<table class="Table">
-			<tr>
-				<td><input type="text" name="nome" placeholder="Nome" class="Caixa1"></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="fone" placeholder="Fone" class="Caixa2"></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="email" placeholder="E-mail" class="Caixa1"></td>
-			</tr>
-		</table>
-		<input type="button" value="Adicionar" class="Botao1" onclick="validar()">
-	</form>
+	<div class="agenda">
+		<h1>Criar novo contato</h1>
+		<form name="frmContato" action="insert">
+			<table>
+				<tr>
+					<td><input type="text" name="nome" placeholder="Nome"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="fone" placeholder="Fone"></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="email" placeholder="E-mail"></td>
+				</tr>
+			</table>
+			<input type="button" value="Adicionar" onclick="validar()">
+		</form>
+	</div>
 	<script src="scripts/validador.js"></script>
 </body>
 </html>

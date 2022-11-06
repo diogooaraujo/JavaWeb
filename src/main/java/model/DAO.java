@@ -59,13 +59,21 @@ public class DAO {
 	
 	/** CRUD READ **/
 	public ArrayList<JavaBeans> listarContatos(){ // O ArrayList é utilizado para criar um vetor dinâmico.
-		// Criando um objeto para acessar a classe JavaBeans
+		// Criando um objeto do tipo ArrayList para acessar a classe JavaBeans
 		ArrayList<JavaBeans> contatos = new ArrayList<>();
+		// Criando uma String com o comando que será executado no Banco de Dados MySQL.
 		String read = "select * from contatos order by nome";
+		// Deve-se utilizar o try/catch todas as vezes que uma conexão precisar ser estabelecida com o Banco de Dados.
 		try {
+			// Fazendo a conexão com o objeto con, da classe Connection, com o método conectar()
 			Connection con = conectar();
-			PreparedStatement pst = con.prepareStatement(read); // Query para o Java executar o comando no Servidor de Banco de Dados MySQL.
-			ResultSet rs = pst.executeQuery(); // Utilizado para armazenar o retorno do Banco de Dados temporariamente em um objeto.
+			
+			// Query para o Java executar o comando no Servidor de Banco de Dados MySQL.
+			PreparedStatement pst = con.prepareStatement(read); // Statement = Comando
+
+			// Utilizado para armazenar o retorno do Banco de Dados temporariamente em um objeto.
+			ResultSet rs = pst.executeQuery(); /*O ResultSet é uma classe da API JAVA que permite percorrermos um DataTable de alguma consulta em um banco de dados. Ao ser inicializado, o Resultset coloca seu cursor na primeira linha do DataTable, o método next() permite que o ponteiro seja direcionado para a próxima linha caso exista.*/
+			
 			// O laço abaixo será executado enquanto houver contatos.
 			while(rs.next()) {
 				// Variáveis de apoio que recebem os dados do banco

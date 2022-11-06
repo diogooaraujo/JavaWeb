@@ -15,27 +15,29 @@
 <title>Agenda de Contatos</title>
 </head>
 <body>
-	<h1>Agenda de Contatos</h1>
-	<a href="novo.html" class="Botao1"> Novo Contato </a>
-	<table id="tabela">
-		<thead>
-			<tr>
-				<th>Id</th>
-				<th>Nome</th>
-				<th>Fone</th>
-				<th>E-mail</th>
-			</tr>
-		</thead>
-		<tbody>
-			<%for (int i = 0; i < lista.size(); i++){%>
+	<div class="agenda">
+		<h1>Agenda de Contatos</h1>
+		<a href="novo.html"> Novo Contato </a>
+		<table id="tabela">
+			<thead>
 				<tr>
-					<td><%=lista.get(i).getIdcon()%></td>
-					<td><%=lista.get(i).getNome()%></td>
-					<td><%=lista.get(i).getFone()%></td>
-					<td><%=lista.get(i).getEmail()%></td>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Fone</th>
+					<th>E-mail</th>
 				</tr>
-			<%} %>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<%for (int i = 0; i < lista.size(); i++){%>
+					<tr>
+						<td><%=lista.get(i).getIdcon()%></td>
+						<td><%=lista.get(i).getNome()%></td>
+						<td><%=lista.get(i).getFone()%></td>
+						<td><%=lista.get(i).getEmail()%></td>
+					</tr>
+				<%} %>
+			</tbody>
+		</table>
+	</div>
 </body>
 </html>
