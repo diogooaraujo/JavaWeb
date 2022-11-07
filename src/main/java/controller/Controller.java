@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAO;
 import model.JavaBeans;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert" })
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/select" })
 // As requisições são recebidas por meio de urls configuradas nas linhas 11. São caminhos definidos em formulários, links, botões etc.
 // Adicionado o parâmetro ("urlPatterns = { ... "/main"})
 public class Controller extends HttpServlet {
@@ -32,6 +32,8 @@ public class Controller extends HttpServlet {
 			contatos(request, response);
 		} else if (action.equals("/insert")) {
 			novoContato(request, response);
+		} else if (action.equals("/select")) {
+			listarContato(request, response);
 		} else {
 			response.sendRedirect("index.html");
 		}
@@ -58,5 +60,24 @@ public class Controller extends HttpServlet {
 		contato.setEmail(request.getParameter("email"));
 		dao.inserirContato(contato);
 		response.sendRedirect("main");
+	}
+	
+	// Editar Contato
+	protected void listarContato(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Recebimento do ID do Contato que será Editado
+		String idcon = request.getParameter("idcon");
+		// Setar a variável JavaBeans
+		contato.setIdcon(idcon);
+		// Executar o método selecionar contato
+		dao.selecionarContato(contato);
+		// Setar os atributos do formulário com o conteúdo JavaBeans
+		request.setAttribute("idcon", contato.getIdcon());
+		request.setAttribute("nome", contato.getNome());
+		request.setAttribute("fone", contato.getFone());
+		request.setAttribute("email", contato.getEmail());
+		// Encaminhar ao documento editar.jsp
+		RequestDispatcher rd = request.getRequestDispatcher("editar.jsp");
+		rd.forward(request, response);
 	}
 }

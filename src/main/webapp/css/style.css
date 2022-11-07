@@ -72,6 +72,10 @@ body{
 	box-shadow: 0 0 12px #bbd3ff;
 }
 
+.agenda table #id{
+	border: 1px solid #ff0000;
+}
+
 #tabela{
 	margin-top: 30px;
 	border-collapse: collapse; /* Removendo o espaçamento células da tabela. */
