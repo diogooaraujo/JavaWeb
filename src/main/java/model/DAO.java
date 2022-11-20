@@ -112,4 +112,35 @@ public class DAO {
 			System.out.println(e);
 		}
 	}
+	
+	//Editar o contato
+	public void alterarContato(JavaBeans contato) {
+		String create = "update contatos set nome=?, fone=?, email=? where idcon=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(create);
+			pst.setString(1, contato.getNome());
+			pst.setString(2, contato.getFone());
+			pst.setString(3, contato.getEmail());
+			pst.setString(4, contato.getIdcon());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}	
+	}
+	
+	/** CRUD DELETE **/
+	public void deletarContato(JavaBeans contato) {
+		String delete = "delete from contatos where idcon=?";
+		try {
+			Connection con = conectar();
+			PreparedStatement pst = con.prepareStatement(delete);
+			pst.setString(1, contato.getIdcon());
+			pst.executeUpdate();
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 }

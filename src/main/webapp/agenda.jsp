@@ -15,9 +15,10 @@
 <title>Agenda de Contatos</title>
 </head>
 <body>
-	<div class="agenda">
+	<div id="container-agenda">
 		<h1>Agenda de Contatos</h1>
-		<a href="novo.html"> Novo Contato </a>
+		<a href="novo.html">Novo Contato</a>
+		<a href="report">Relatório</a>
 		<table id="tabela">
 			<thead>
 				<tr>
@@ -35,12 +36,17 @@
 						<td><%=lista.get(i).getNome()%></td>
 						<td><%=lista.get(i).getFone()%></td>
 						<td><%=lista.get(i).getEmail()%></td>
-						<td><a href="select?idcon=<%=lista.get(i).getIdcon()%>">Editar</a></td>
+						<td class="coluna4">
+							<a href="select?idcon=<%=lista.get(i).getIdcon()%>">Editar</a>
+							<a href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)" class="excluir">Excluir</a></td>
+						</td>
+						
 					</tr>
 				<%} %>
 				<!-- A "?" é utilizada para encaminhar um parâmetro ao documento -->
 			</tbody>
 		</table>
 	</div>
+	<script src="scripts/confirmador.js"></script>
 </body>
 </html>

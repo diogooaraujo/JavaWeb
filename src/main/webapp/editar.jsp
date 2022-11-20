@@ -9,9 +9,9 @@
 <title>Agenda</title>
 </head>
 <body>
-	<div class="agenda">
+	<div id="container-agenda">
 		<h1>Editar contato</h1>
-		<form name="frmContato" action="">
+		<form name="frmContato" action="update">
 			<table>
 				<tr>
 					<td><input type="text" name="idcon" id="id" readonly value="<%out.print(request.getAttribute("idcon"));%>"></td>
@@ -26,6 +26,7 @@
 					<td><input type="text" name="email" value="<%out.print(request.getAttribute("email"));%>"></td>
 				</tr>
 			</table>
+			<a href="main" class="excluir"> Voltar </a>
 			<input type="button" value="Salvar" onclick="validar()">
 		</form>
 	</div>

@@ -7,7 +7,7 @@
 <title>Agenda</title>
 </head>
 <body>
-	<div class="agenda">
+	<div id="container-agenda">
 		<h1>Criar novo contato</h1>
 		<form name="frmContato" action="insert">
 			<table>
@@ -21,6 +21,7 @@
 					<td><input type="text" name="email" placeholder="E-mail"></td>
 				</tr>
 			</table>
+			<a href="main" class="excluir">Voltar</a>
 			<input type="button" value="Adicionar" onclick="validar()">
 		</form>
 	</div>
