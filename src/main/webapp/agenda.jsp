@@ -3,8 +3,8 @@
 <%@ page import="model.JavaBeans"%>
 <%@ page import="java.util.ArrayList"%>
 <%
-	//Recebendo o objeto lista.
-	ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contatos"); 
+@SuppressWarnings("unchecked")
+ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("contatos");
 %>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,8 +17,7 @@
 <body>
 	<div id="container-agenda">
 		<h1>Agenda de Contatos</h1>
-		<a href="novo.html">Novo Contato</a>
-		<a href="report">Relatório</a>
+		<a href="novo.html">Novo Contato</a> <a href="report">Relatório</a>
 		<table id="tabela">
 			<thead>
 				<tr>
@@ -30,20 +29,24 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%for (int i = 0; i < lista.size(); i++){%>
-					<tr>
-						<td><%=lista.get(i).getIdcon()%></td>
-						<td><%=lista.get(i).getNome()%></td>
-						<td><%=lista.get(i).getFone()%></td>
-						<td><%=lista.get(i).getEmail()%></td>
-						<td class="coluna4">
-							<a href="select?idcon=<%=lista.get(i).getIdcon()%>">Editar</a>
-							<a href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)" class="excluir">Excluir</a></td>
-						</td>
-						
-					</tr>
-				<%} %>
-				<!-- A "?" é utilizada para encaminhar um parâmetro ao documento -->
+				<%
+				for (int i = 0; i < lista.size(); i++) {
+				%>
+				<tr>
+					<td><%=lista.get(i).getIdcon()%></td>
+					<td><%=lista.get(i).getNome()%></td>
+					<td><%=lista.get(i).getFone()%></td>
+					<td><%=lista.get(i).getEmail()%></td>
+					<td class="coluna4"><a
+						href="select?idcon=<%=lista.get(i).getIdcon()%>">Editar</a> <a
+						href="javascript: confirmar(<%=lista.get(i).getIdcon()%>)"
+						class="excluir">Excluir</a></td>
+					</td>
+
+				</tr>
+				<%
+				}
+				%>
 			</tbody>
 		</table>
 	</div>

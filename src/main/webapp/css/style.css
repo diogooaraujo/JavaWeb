@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap')
+	;
 
 * {
 	margin: 0;
@@ -13,7 +15,7 @@
 	font-weight: 400;
 }
 
-body{
+body {
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -22,7 +24,7 @@ body{
 	background-size: cover;
 }
 
-#container-agenda{
+#container-agenda {
 	width: min-content;
 	height: min-content;
 	padding: 40px;
@@ -32,7 +34,7 @@ body{
 	box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
-#container-agenda h1{
+#container-agenda h1 {
 	font-size: 1.6rem;
 	font-weight: 700;
 	color: #124ce7;
@@ -40,30 +42,31 @@ body{
 	margin-bottom: 20px;
 }
 
-#container-agenda table{
+#container-agenda table {
 	width: 400px;
 	height: 150px;
 }
 
-#container-agenda a, input[type="button"]{
-	text-decoration: none; /* Link sem decoração padrão: azul e sublinhado. */
+#container-agenda a, input[type="button"] {
+	text-decoration: none;
+	/* Link sem decoração padrão: azul e sublinhado. */
 	background: linear-gradient(0deg, #124ce7, #3784ff);
-	padding: 5px 10px 5px 10px; /* Espaçamento interno do conteúdo */ 
+	padding: 5px 10px 5px 10px; /* Espaçamento interno do conteúdo */
 	color: #fff; /* Cor da fonte */
 	font-size: 1.2em; /* Tamanho da fonte */
 	font-weight: 700; /* Peso da fonte */
-	border-radius: 5px; /* Curvatura do botão */ 
+	border-radius: 5px; /* Curvatura do botão */
 	text-transform: uppercase; /* Transformando as letras em maíusculas */
 	border: 0; /* Removendo a sombra */
 	cursor: pointer; /* Transformando o ponteiro do mouse em clicável */
 }
 
-#container-agenda .excluir{
+#container-agenda .excluir {
 	background: linear-gradient(0deg, #ff0000, #c92323);
 	margin: 0 5px 0 5px;
 }
 
-#container-agenda table input{
+#container-agenda table input {
 	width: 100%;
 	height: 30px;
 	padding: 5px;
@@ -72,21 +75,22 @@ body{
 	border-radius: 5px;
 }
 
-#container-agenda table input:focus{
+#container-agenda table input:focus {
 	border-color: #124ce7;
 	box-shadow: 0 0 12px #bbd3ff;
 }
 
-#container-agenda table #id{
+#container-agenda table #id {
 	border: 1px solid #ff0000;
 }
 
-#tabela{
+#tabela {
 	margin-top: 30px;
-	border-collapse: collapse; /* Removendo o espaçamento células da tabela. */
+	border-collapse: collapse;
+	/* Removendo o espaçamento células da tabela. */
 }
 
-#tabela th{
+#tabela th {
 	border: 1px solid #101010;
 	padding: 10px;
 	min-width: 150px;
@@ -95,11 +99,11 @@ body{
 	color: #fff;
 }
 
-#tabela .coluna4{
+#tabela .coluna4 {
 	min-width: 250px;
 }
 
-#tabela td{
+#tabela td {
 	border: 1px solid #101010;
 	padding: 10px;
 }

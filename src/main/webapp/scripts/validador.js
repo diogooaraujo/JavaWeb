@@ -1,10 +1,10 @@
 /**
- * Validação de Formulário
- @author Diogo de Araújo
+ * Validador de campos obrigatorios
+ *
+ * @author Diogo de Araújo
  */
  
  function validar(){
-	// Verificar se o JavaScript está linkado ao HTML -> alert('teste');
 	let nome = frmContato.nome.value;
 	let fone = frmContato.fone.value;
 	if(nome === ""){

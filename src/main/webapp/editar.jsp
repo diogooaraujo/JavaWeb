@@ -14,20 +14,24 @@
 		<form name="frmContato" action="update">
 			<table>
 				<tr>
-					<td><input type="text" name="idcon" id="id" readonly value="<%out.print(request.getAttribute("idcon"));%>"></td>
+					<td><input type="text" name="idcon" id="id" readonly
+						value="<%out.print(request.getAttribute("idcon"));%>"></td>
 				</tr>
 				<tr>
-					<td><input type="text" name="nome" value="<%out.print(request.getAttribute("nome"));%>"></td>
+					<td><input type="text" name="nome"
+						value="<%out.print(request.getAttribute("nome"));%>"></td>
 				</tr>
 				<tr>
-					<td><input type="text" name="fone" value="<%out.print(request.getAttribute("fone"));%>"></td>
+					<td><input type="text" name="fone"
+						value="<%out.print(request.getAttribute("fone"));%>"></td>
 				</tr>
 				<tr>
-					<td><input type="text" name="email" value="<%out.print(request.getAttribute("email"));%>"></td>
+					<td><input type="text" name="email"
+						value="<%out.print(request.getAttribute("email"));%>"></td>
 				</tr>
 			</table>
-			<a href="main" class="excluir"> Voltar </a>
-			<input type="button" value="Salvar" onclick="validar()">
+			<a href="main" class="excluir"> Voltar </a> <input type="button"
+				value="Salvar" onclick="validar()">
 		</form>
 	</div>
 	<script src="scripts/validador.js"></script>
